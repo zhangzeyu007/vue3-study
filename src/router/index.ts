@@ -2,14 +2,15 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-21 23:43:25
- * @FilePath: \unlimitedfe\src\router\index.ts
+ * @LastEditTime: 2022-04-26 19:27:26
+ * @FilePath: \vue3-study\src\router\index.ts
  */
-import { createRouter,  RouteRecordRaw, createWebHistory } from 'vue-router'
+import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
 
 
 // 路由配置
 const Home = () => import('@/view/home/index.vue');
+const About = () => import('@/view/about/index.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -21,7 +22,13 @@ const routes: Array<RouteRecordRaw> = [
 		beforeEnter: (to, from) => {
 			console.log('beforeEnter-------------');
 		},
-	}
+	},
+	{
+		path: `/about`,
+		name: 'About',
+		component: About,
+	},
+
 ];
 
 // 创建路由
@@ -39,8 +46,8 @@ router.beforeEach((to, from, next) => {
 })
 // 全局解析守卫
 router.beforeResolve(async to => {
- console.log('beforeResolve-------------------------------');
-// console.log(to);
+	console.log('beforeResolve-------------------------------');
+	// console.log(to);
 })
 
 // 全局后置守卫

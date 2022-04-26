@@ -3,8 +3,8 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-22 11:38:04
- * @FilePath: \unlimitedfe\vite.config.ts
+ * @LastEditTime: 2022-04-26 18:53:32
+ * @FilePath: \vue3-study\vite.config.ts
  */
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => ({
   //   jsxFragment: 'Fragment'
   // },
   server: {
+    port:8081,
     hmr: { overlay: false },
     // https: true,
     proxy: {
