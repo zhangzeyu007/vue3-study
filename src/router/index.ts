@@ -2,7 +2,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-26 19:27:26
+ * @LastEditTime: 2022-04-27 14:18:43
  * @FilePath: \vue3-study\src\router\index.ts
  */
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
@@ -10,7 +10,8 @@ import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
 
 // 路由配置
 const Home = () => import('@/view/home/index.vue');
-const About = () => import('@/view/about/index.vue');
+const Reactive = () => import('@/view/about/reactive.vue');
+const toRef = () => import('@/view/about/toRef.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -24,11 +25,16 @@ const routes: Array<RouteRecordRaw> = [
 		},
 	},
 	{
-		path: `/about`,
-		name: 'About',
-		component: About,
+		path: `/reactive`,
+		name: 'reactive',
+		component: Reactive,
 	},
-
+	{
+		path: `/toRef`,
+		name: 'toRef',
+		component: toRef,
+	},
+	
 ];
 
 // 创建路由
