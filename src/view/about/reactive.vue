@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-26 19:26:50
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 14:17:16
+ * @LastEditTime: 2022-04-27 15:04:08
  * @FilePath: \vue3-study\src\view\about\reactive.vue
 -->
 /**
@@ -24,12 +24,13 @@
 <script setup lang="ts">
 // vue3 数据响应式
 import {ref ,Ref , isRef , shallowRef , triggerRef ,customRef , reactive ,readonly , shallowReactive} from 'vue'
-
+// 声明泛型
 type O = {
 	name:string
 	age:number	
 	list:number[]
 }
+// 创建响应式对象
 const obj = reactive<O>({
 	name:'张泽雨',
 	age:18,
@@ -39,10 +40,16 @@ const obj = reactive<O>({
 
 let  message:Ref<string> = ref('年后')
 let  not:string  = '年后'
+
+
+// shallow 改变 ref 的值是响应式的 
+/* isReactive(foo.value) 
+ */
 const shallow = shallowRef({
   greet: 'Hello, world'
 })
 
+// 自定义ref
 function  myRef<T> (value:T) {
 	return customRef((track, trigger) => {
 	  return {
@@ -79,6 +86,7 @@ const changMeg = () =>{
 	// 	greet: '小王'
 	// }
 	shallow.value.greet = '小梦'
+	// triggerRef 手动执行与 shallowRef 关联的任何作用 (effect)
 	triggerRef(shallow)
 	// console.log(isRef(message));
 	console.log(isRef(not));
@@ -101,6 +109,7 @@ setTimeout(() => {
 // readonly 将响应式对象,变成只读对象
 obj.age = 11
 let readonlyObj = readonly<O>(obj)
+console.log(readonlyObj);
 
 //shallowReactive 将响应式对象,变成响应式对象,但是不会改变原来的值
 

@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-27 14:18:29
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 14:47:26
+ * @LastEditTime: 2022-04-27 14:54:48
  * @FilePath: \vue3-study\src\view\about\toRef.vue
 -->
 
@@ -18,7 +18,7 @@
 </template>
 
 <script setup lang="ts">
-import {toRef, toRefs,reactive } from 'vue';
+import {toRef, toRefs, reactive ,toRaw } from 'vue';
 
 // 原始对象是响应式, 页面是发生变化的
 const obj =reactive({
@@ -36,5 +36,12 @@ const change = () => {
 
 // toRefs 解构变成响应式数据
 const { bar , foo} = toRefs(obj)
+
+// toRaw将响应式对象转换为原始对象形式
+const raw = toRaw(obj)
+console.log(obj);
+
+console.log(raw);
+
 
 </script>

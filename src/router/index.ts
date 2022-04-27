@@ -2,7 +2,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 14:18:43
+ * @LastEditTime: 2022-04-27 15:08:17
  * @FilePath: \vue3-study\src\router\index.ts
  */
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
@@ -12,6 +12,7 @@ import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
 const Home = () => import('@/view/home/index.vue');
 const Reactive = () => import('@/view/about/reactive.vue');
 const toRef = () => import('@/view/about/toRef.vue');
+const Computed = () => import('@/view/about/computed.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -33,6 +34,11 @@ const routes: Array<RouteRecordRaw> = [
 		path: `/toRef`,
 		name: 'toRef',
 		component: toRef,
+	},
+	{
+		path: `/computed`,
+		name: 'computed',
+		component: Computed,
 	},
 	
 ];
