@@ -3,14 +3,12 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:54:02
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 11:38:49
+ * @LastEditTime: 2022-04-28 12:20:52
  * @FilePath: \vue3-study\src\view\home\index.vue
 -->
 
 <template>
-    <div class="home-container">
-        <Layout></Layout>
-    </div>
+    <Layout></Layout>
 </template>
 
 <script lang="ts">
@@ -43,6 +41,4 @@ const Home = defineComponent({
 export default Home;
 </script>
 
-<style lang="scss">
-
-</style>
+<style lang="scss"></style>

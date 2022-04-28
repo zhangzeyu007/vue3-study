@@ -3,12 +3,13 @@
  * @Author: 张泽雨
  * @Date: 2022-04-26 19:26:50
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 15:04:08
+ * @LastEditTime: 2022-04-28 14:28:22
  * @FilePath: \vue3-study\src\view\about\reactive.vue
 -->
 /**
  * vue3 数据响应式学习
  */
+ 
 <template>
 <div>{{message}}</div>
 <div @click="changMeg" v-bind:style="style">点击</div>
