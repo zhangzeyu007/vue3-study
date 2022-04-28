@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 10:05:26
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 11:08:23
+ * @LastEditTime: 2022-04-28 11:11:30
  * @FilePath: \vue3-study\src\components\HelloWorld.vue
 -->
 
@@ -12,6 +12,7 @@
     <div>{{ num }}</div>
     <a-button @click="num++">增加</a-button>
 </template>
+
 
 <script setup lang="ts">
 /// 父子组件的生命周期
