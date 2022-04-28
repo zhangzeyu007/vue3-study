@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 11:16:36
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 14:46:47
+ * @LastEditTime: 2022-04-28 15:04:13
  * @FilePath: \vue3-study\src\layout\index.vue
 -->
 
@@ -20,7 +20,8 @@
                 <Content ref ='contents' 
                 :data="list" 
                 @on-click="getList"
-                ></Content>
+                >
+                </Content>
             </a-layout-content>
         </a-layout>
     </a-layout>

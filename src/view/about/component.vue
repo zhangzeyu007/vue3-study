@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 09:59:12
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 11:04:21
+ * @LastEditTime: 2022-04-28 15:24:15
  * @FilePath: \vue3-study\src\view\about\component.vue
 -->
 
@@ -11,7 +11,7 @@
 
 <HelloWorld v-if="flag"></HelloWorld>
 <a-button @click="flag = !flag">改变组件状态</a-button>
-
+<Card :content="`我是你的人`"></Card>
 </template>
 
 <script setup lang="ts">
