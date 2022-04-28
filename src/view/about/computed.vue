@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-27 15:05:42
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 16:07:51
+ * @LastEditTime: 2022-04-27 16:13:54
  * @FilePath: \vue3-study\src\view\about\computed.vue
 -->
 <template>
@@ -51,6 +51,7 @@ const data = reactive<Shop[]>([
     { name: '饼干', num: 1, price: 10 },
     { name: '面包', num: 2, price: 20 },
 ]);
+
 const columns = [
     {
         title: '商品名称',
@@ -79,16 +80,13 @@ const handle = (item:Shop,type:boolean):void => {
 	if(item.num < 99 && type){
 		item.num++;
 	}
-	total()
+	
 }
 
-const total =() =>{
-$total.value = 	data.reduce((pre,cur)=>{
+$total = computed(()=>{
+return data.reduce((pre,cur)=>{
 		return pre+(cur.num*cur.price)
 	},0)
-}
-
-total()
-
+})
 
 </script>
