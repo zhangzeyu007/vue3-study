@@ -3,17 +3,17 @@
  * @Author: 张泽雨
  * @Date: 2022-04-29 12:48:03
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-29 13:31:27
+ * @LastEditTime: 2022-04-29 14:04:03
  * @FilePath: \vue3-study\src\view\about\keepAlive.vue
 -->
 
 <template>
 
- <keep-alive>
+ <keep-alive :include="['A','B']" >
     <component :is="current.comName"></component>
  </keep-alive>
  
-  <component :is="current.comName"></component>
+  <!-- <component :is="current.comName"></component> -->
 
   <a-button @click ="swichCom">切换动态组件</a-button>
 
