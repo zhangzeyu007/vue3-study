@@ -8,8 +8,10 @@
         "preview": "vite preview"
     },
     "dependencies": {
+        "animate.css": "^4.1.1",
         "ant-design-vue": "^3.0.0-alpha.15",
         "axios": "^0.26.1",
+        "gsap": "^3.10.4",
         "vue": "^3.2.25",
         "vue-router": "^4.0.14",
         "vue-tsc": "^0.29.5",
