@@ -39,7 +39,7 @@ export default defineConfig(({ mode }) => ({
     },
   },
   build: {
-    outDir: path.resolve(__dirname, '../unlimitedServer/view/unlimitedfe/'),
+    outDir: path.resolve(__dirname, './output'),
     manifest: true
   },
   plugins: [vue(), legacy({ targets: ['defaults', 'not IE 11'] })],
