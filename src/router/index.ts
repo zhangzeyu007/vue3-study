@@ -2,7 +2,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 10:01:50
+ * @LastEditTime: 2022-04-29 12:59:31
  * @FilePath: \vue3-study\src\router\index.ts
  */
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
@@ -15,6 +15,7 @@ const toRef = () => import('@/view/about/toRef.vue');
 const Computed = () => import('@/view/about/computed.vue');
 const Watch = () => import('@/view/about/watch.vue');
 const Component = () => import('@/view/about/component.vue');
+const keepAlive = () => import('@/view/about/keepAlive.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -51,6 +52,11 @@ const routes: Array<RouteRecordRaw> = [
 		path: `/component`,
 		name: 'component',
 		component: Component,
+	},
+	{
+		path: `/keepAlive`,
+		name: 'keepAlive',
+		component: keepAlive,
 	},
 	
 ];

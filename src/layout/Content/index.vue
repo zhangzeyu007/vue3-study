@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 11:16:26
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-28 14:47:36
+ * @LastEditTime: 2022-04-29 12:39:55
  * @FilePath: \vue3-study\src\layout\Content\index.vue
 -->
 
@@ -16,6 +16,7 @@
  <div>
 	 <button @click="clickTap">派发</button>
  </div>
+
 
 </template>
 
