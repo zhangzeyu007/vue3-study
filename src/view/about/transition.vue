@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-29 14:06:22
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-29 16:24:00
+ * @LastEditTime: 2022-04-29 20:02:11
  * @FilePath: \vue3-study\src\view\about\transition.vue
 -->
 
@@ -11,8 +11,9 @@
     <a-button @click="flag = !flag">切换</a-button>
     <a-button @click="add">add</a-button>
     <a-button @click="del">del</a-button>
+    <a-button @click="random">随机</a-button>
     <div class="wraps">
-		<!-- 列表过渡 -->
+        <!-- 列表过渡 -->
         <transition-group
             leave-active-class="animate__animated animate__rotateInDownLeft"
             enter-active-class="animate__animated animate__jackInTheBox"
@@ -22,7 +23,20 @@
             </div>
         </transition-group>
     </div>
-   <!-- 过渡 -->
+    <!-- 平面过渡 -->
+    <div class="wraps-list">
+        <transition-group move-class="mmm">
+            <div v-for="item in numList" :key="item.id" class="items">
+                {{ item.number }}
+            </div>
+        </transition-group>
+    </div>
+    <!-- 状态过渡 -->
+    <input step="20" type="number" v-model="num.current" />
+    <div>
+        {{ num.tweenedNumber.toFixed(0) }}
+    </div>
+    <!-- 过渡 -->
     <transition
         name="fade"
         :duration="500"
@@ -45,9 +59,10 @@
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue';
+import { ref, reactive, watch } from 'vue';
 import 'animate.css';
 import gsap from 'gsap';
+import _ from 'lodash';
 
 const flag = ref<boolean>(true);
 
@@ -68,13 +83,43 @@ const list = reactive<List[]>([
         name: '妈妈',
     },
 ]);
+let numList = ref(
+    Array.apply(null, { length: 80 } as number[]).map((_, index) => {
+        return {
+            id: index,
+            number: (index % 9) + 1,
+        };
+    })
+);
 
+const num = reactive({
+    current: 0,
+    tweenedNumber: 0,
+});
+
+watch(
+    () => num.current,
+    (newVal) => {
+        gsap.to(num, {
+            tweenedNumber: newVal,
+            duration: 1,
+        });
+    }
+);
+
+// 方法
 const add = () => {
-    list.push({name:'添加'});
+    list.push({ name: '添加' });
 };
+
 const del = () => {
-	list.pop()
-}
+    list.pop();
+};
+
+// 随机
+const random = () => {
+    numList.value = _.shuffle(numList.value);
+};
 
 // 过渡的生命周期函数
 const EnterFrom = (el: Element) => {
@@ -93,8 +138,8 @@ const EnterActive = (el: Element, done: gsap.Callback) => {
     }, 3000);
 
     gsap.to(el, {
-        width: '600px',
-        height: '600px',
+        width: '300px',
+        height: '300px',
         onComplete: done,
     });
 };
@@ -122,7 +167,6 @@ const LeaveTo = (el: Element) => {
 const LeaveCancelled = (el: Element) => {
     console.log('LeaveCancelled----离开过渡效果被打断');
 };
-
 </script>
 
 <style lang="less" scoped>
@@ -169,5 +213,22 @@ const LeaveCancelled = (el: Element) => {
     margin: 10px;
     padding: 10px;
     background: #ccc;
+}
+
+.wraps-list {
+    display: flex;
+    flex-wrap: wrap;
+    width: calc(25px * 10 + 9px);
+    .items {
+        width: 25px;
+        height: 25px;
+        border: 1px solid #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.mmm {
+    transition: all 1s;
 }
 </style>
