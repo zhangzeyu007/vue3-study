@@ -2,7 +2,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 12:17:11
+ * @LastEditTime: 2022-05-01 14:55:04
  * @FilePath: \vue3-study\src\router\index.ts
  */
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
@@ -18,6 +18,8 @@ const Component = () => import('@/view/about/component.vue');
 const keepAlive = () => import('@/view/about/keepAlive.vue');
 const Transition = () => import('@/view/about/transition.vue');
 const Jsx = () => import('@/view/about/jsx.vue');
+const Model = () => import('@/view/about/model.vue');
+const Directive = () => import('@/view/about/directive.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -70,7 +72,17 @@ const routes: Array<RouteRecordRaw> = [
 		name: 'jsx',
 		component: Jsx,
 	},
-	
+	{
+		path: `/model`,
+		name: 'model',
+		component: Model,
+	},
+	{
+		path: `/directive`,
+		name: 'directive',
+		component: Directive,
+	},
+
 ];
 
 // 创建路由
