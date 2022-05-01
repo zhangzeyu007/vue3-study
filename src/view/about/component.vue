@@ -3,19 +3,23 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 09:59:12
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-29 12:45:05
+ * @LastEditTime: 2022-04-30 16:21:05
  * @FilePath: \vue3-study\src\view\about\component.vue
 -->
 
 <template>
+    <div>
+        <D @on-click="getFlag"></D>
+        <F></F>
+    </div>
     <HelloWorld v-if="flag"></HelloWorld>
     <a-button @click="flag = !flag">改变组件状态</a-button>
     <Card :content="`我是你的人`"></Card>
     <Tree @on-click="getItem" :data="data"></Tree>
     <div>
         <a-button @click="swichBtn(item)" type="primary" style="margin-left: 10px" :key="item.name" v-for="item in tabs"
-            >我是组件{{ item.name }}</a-button
-        >
+            >我是组件{{ item.name }}
+        </a-button>
     </div>
     <component :is="current.comName"></component>
     <Suspense>
@@ -47,6 +51,8 @@ import {
 } from 'vue';
 import A from './Content/A.vue';
 import B from './Content/B.vue';
+import F from './Content/F.vue';
+import D from './Content/D.vue';
 import Tree from '@/components/Tree/index.vue';
 //异步组件
 const C = defineAsyncComponent(() => import('./Content/C.vue'));
@@ -121,6 +127,10 @@ let current = reactive<Com>({
 // 切换动态组件
 const swichBtn = (item: Tabs) => {
     current.comName = item.comName;
+};
+
+const getFlag = (flag:boolean) => {
+    console.log(flag);
 };
 
 onBeforeMount(() => {
