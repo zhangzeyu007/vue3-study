@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 17:21:23
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 17:43:53
+ * @LastEditTime: 2022-05-02 11:43:15
  * @FilePath: \vue3-study\src\utils\hooks.ts
  */
 
@@ -12,7 +12,6 @@ import { onMounted } from 'vue'
 type Options = {
 	el: string
 }
-
 
 export default function (options: Options): Promise<{ baseUrl: string }> {
 	return new Promise((resolve) => {
@@ -33,5 +32,4 @@ export default function (options: Options): Promise<{ baseUrl: string }> {
 			return canvas.toDataURL('image/png')
 		}
 	})
-
 }

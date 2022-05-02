@@ -3,9 +3,10 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 12:10:11
+ * @LastEditTime: 2022-05-02 14:21:02
  * @FilePath: \vue3-study\src\main.ts
  */
+
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from "./router";
@@ -14,6 +15,7 @@ import 'ant-design-vue/dist/antd.css';
 import '@/styles/reset.less';
 import Card from "@/components/card/index.vue";
 import mitt from 'mitt';
+import Loading from './packages/loading/index.js';
 
 const Mit = new mitt();
 
@@ -24,9 +26,32 @@ declare module 'vue' {
 		$Bus: typeof Mit
 	}
 }
+type Filter = {
+	formate: <T>(str: T) => string
+}
+declare module "@vue/runtime-core" {
+	export interface ComponentCustomProperties {
+		$Bus: typeof Mit
+		$filters: Filter
+		$env: string
+		$loading: {
+			show: () => void
+			hide: () => void
+		}
+	}
+}
 
 app.config.globalProperties.$Bus = Mit;
 
+app.config.globalProperties.$filters = {
+	formate<T>(str: T): string {
+		return `真>>>${str}`
+	}
+}
+
+app.config.globalProperties.$env = 'dev'
+
+app.use(Loading)
 app.use(router);
 app.use(Antd).component('Card', Card).mount("#app")
 
