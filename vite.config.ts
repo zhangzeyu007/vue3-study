@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 13:07:10
+ * @LastEditTime: 2022-05-02 15:48:41
  * @FilePath: \vue3-study\vite.config.ts
  */
 import { defineConfig } from 'vite'
@@ -13,6 +13,8 @@ const path = require('path')
 import legacy from '@vitejs/plugin-legacy';
 import vueJsx from '@vitejs/plugin-vue-jsx';
 import AutoImportPlugin from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vitejs.dev/config/
 
@@ -28,10 +30,10 @@ export default defineConfig(({ mode }) => ({
   define: {
     isDev: JSON.stringify(mode !== 'production'),
   },
-  // esbuild: {
-  //   jsxFactory: 'h',
-  //   jsxFragment: 'Fragment'
-  // },
+  esbuild: {
+    jsxFactory: 'h',
+    jsxFragment: 'Fragment'
+  },
   server: {
     port: 8081,
     hmr: { overlay: false },
@@ -44,8 +46,15 @@ export default defineConfig(({ mode }) => ({
     outDir: path.resolve(__dirname, './output'),
     manifest: true
   },
-  plugins: [vue(), vueJsx(), AutoImportPlugin({
+  plugins: [vue(), vueJsx(),
+  AutoImportPlugin({
     imports: ['vue'],
     dts: 'src/types/auto-import.d.ts',
-  }), legacy({ targets: ['defaults', 'not IE 11'] })],
+    resolvers: [ElementPlusResolver()],
+  }),
+
+  Components({
+    resolvers: [ElementPlusResolver()],
+  }),
+  legacy({ targets: ['defaults', 'not IE 11'] })],
 }))

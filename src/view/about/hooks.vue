@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 17:00:45
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-02 14:43:27
+ * @LastEditTime: 2022-05-02 16:12:32
  * @FilePath: \vue3-study\src\view\about\hooks.vue
 -->
 
@@ -14,6 +14,8 @@
         {{ $filters.formate('我是渣男') }}
         {{ $env }}
         <a-button @click="showLoading">切换</a-button>
+        <el-input class="ipt"></el-input>
+        {{ Test.name }}----{{ Test.current }}
     </div>
 </template>
 
@@ -21,6 +23,9 @@
 import H from './Content/H.vue';
 import useBase64 from '../../utils/hooks';
 import { getCurrentInstance, ComponentInternalInstance } from 'vue';
+import { useTestSotre } from '../../store';
+
+const Test = useTestSotre();
 
 const { appContext } = getCurrentInstance() as ComponentInternalInstance;
 
@@ -38,3 +43,14 @@ useBase64({
     console.log(res.baseUrl);
 });
 </script>
+
+<style lang="less" scoped>
+.ipt {
+    /deep/ input {
+        background: red;
+    }
+    :deep(input) {
+        background: blue;
+    }
+}
+</style>
