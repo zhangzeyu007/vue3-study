@@ -2,7 +2,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-14 13:55:48
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 14:55:04
+ * @LastEditTime: 2022-05-01 17:01:24
  * @FilePath: \vue3-study\src\router\index.ts
  */
 import { createRouter, RouteRecordRaw, createWebHistory } from 'vue-router'
@@ -20,6 +20,7 @@ const Transition = () => import('@/view/about/transition.vue');
 const Jsx = () => import('@/view/about/jsx.vue');
 const Model = () => import('@/view/about/model.vue');
 const Directive = () => import('@/view/about/directive.vue');
+const Hooks = () => import('@/view/about/hooks.vue');
 
 
 const routes: Array<RouteRecordRaw> = [
@@ -81,6 +82,11 @@ const routes: Array<RouteRecordRaw> = [
 		path: `/directive`,
 		name: 'directive',
 		component: Directive,
+	},
+	{
+		path: `/hooks`,
+		name: 'hooks',
+		component: Hooks,
 	},
 
 ];

@@ -3,14 +3,15 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 14:37:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 15:34:55
+ * @LastEditTime: 2022-05-01 16:33:44
  * @FilePath: \vue3-study\src\view\about\directive.vue
 -->
 
 <template>
     <div>
+        <H></H>
         <a-button @click="flag = !flag">切换</a-button>
-        <G v-if="flag" v-move.zzy="{ background: 'green' }"></G>
+        <G v-if="flag" v-color.zzy="{ background: 'green' }"></G>
         <input v-model="value" type="text" />
         <G v-node="{ background: value }"></G>
     </div>
@@ -18,6 +19,7 @@
 
 <script setup lang="ts">
 import G from './Content/G.vue';
+import H from './Content/H.vue';
 import { ref, Directive, DirectiveBinding } from 'vue';
 type Dir = {
     background: string;
@@ -25,7 +27,7 @@ type Dir = {
 
 let flag = ref<boolean>(true);
 let value = ref<string>('');
-const vMove: Directive = {
+const vColor: Directive = {
     created() {
         console.log('Directive--------created');
     },
