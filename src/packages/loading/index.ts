@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-02 12:07:13
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-02 14:44:32
+ * @LastEditTime: 2022-05-03 12:59:17
  * @FilePath: \vue3-study\src\packages\loading\index.ts
  */
 

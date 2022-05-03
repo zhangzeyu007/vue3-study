@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-03 12:48:07
+ * @LastEditTime: 2022-05-03 13:04:05
  * @FilePath: \vue3-study\src\main.ts
  */
 
@@ -57,12 +57,11 @@ const piniaPlugin = (options: Options) => {
 
 const app = createApp(App);
 
-declare module 'vue' {
-	export interface ComponentCustomProperties {
-		$Bus: typeof Mit,
-
-	}
-}
+// declare module 'vue' {
+// 	export interface ComponentCustomProperties {
+// 		$Bus: typeof Mit,
+// 	}
+// }
 type Filter = {
 	formate: <T>(str: T) => string
 }
@@ -75,7 +74,6 @@ declare module "@vue/runtime-core" {
 		}
 		$filters: Filter
 		$env: string
-
 	}
 }
 
