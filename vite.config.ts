@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-13 16:23:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-02 15:48:41
+ * @LastEditTime: 2022-05-03 10:37:48
  * @FilePath: \vue3-study\vite.config.ts
  */
 import { defineConfig } from 'vite'
@@ -30,10 +30,10 @@ export default defineConfig(({ mode }) => ({
   define: {
     isDev: JSON.stringify(mode !== 'production'),
   },
-  esbuild: {
-    jsxFactory: 'h',
-    jsxFragment: 'Fragment'
-  },
+  // esbuild: {
+  //   jsxFactory: 'h',
+  //   jsxFragment: 'Fragment'
+  // },
   server: {
     port: 8081,
     hmr: { overlay: false },
