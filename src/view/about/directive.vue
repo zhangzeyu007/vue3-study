@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 14:37:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 16:33:44
+ * @LastEditTime: 2022-05-03 13:25:57
  * @FilePath: \vue3-study\src\view\about\directive.vue
 -->
 
@@ -48,9 +48,6 @@ const vColor: Directive = {
     unmounted() {
         console.log('Directive--------unmounted');
     },
-    render() {
-        console.log('Directive--------render');
-    },
     // 可以接收参数
     // @ts-ignore
     bind(el: HTMLElement, binding: any) {
@@ -59,7 +56,6 @@ const vColor: Directive = {
         console.log(binding);
     },
     // 可以接收参数
-    // @ts-ignore
     inserted(el: HTMLElement, binding: any) {
         console.log('Directive--------inserted');
         console.log(el);

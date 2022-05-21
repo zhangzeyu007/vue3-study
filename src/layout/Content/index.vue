@@ -3,56 +3,46 @@
  * @Author: 张泽雨
  * @Date: 2022-04-28 11:16:26
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-29 12:39:55
+ * @LastEditTime: 2022-05-21 14:06:01
  * @FilePath: \vue3-study\src\layout\Content\index.vue
 -->
 
-
 <template>
- <div>
-	 {{title}}
-	 {{data}}
- </div>
- <div>
-	 <button @click="clickTap">派发</button>
- </div>
-
-
+    <div>
+        {{ title }}
+        {{ data }}
+    </div>
+    <div>
+        <button @click="clickTap">派发</button>
+    </div>
 </template>
 
-
 <script setup lang="ts">
-import  { reactive } from 'vue'
+import { reactive } from 'vue';
 
 type Props = {
-	title?: string,
-	data?: Array<any>
-}
-const list = reactive<number[]>([6,6,6,6])
+    title?: string;
+    data?: Array<any>;
+};
+
+const list = reactive<number[]>([6, 6, 6, 6]);
 
 // 设置props 的 默认值
-withDefaults(defineProps<Props>(),{
-	title:"你好",
-	data:() =>[1,2,3,4]
-})
+withDefaults(defineProps<Props>(), {
+    title: '你好',
+    data: () => [1, 2, 3, 4],
+});
 
 defineExpose({
-list
-})
+    list,
+});
 
-
-
-const emit = defineEmits(['on-click'])
+const emit = defineEmits(['on-click']);
 const clickTap = () => {
-	console.log('派发')
-	// 子组件派发给父组件
-	emit('on-click' , list)
-}
-
+    console.log('派发');
+    // 子组件派发给父组件
+    emit('on-click', list);
+};
 </script>
 
-
-<style lang="less" scoped>
-
-
-</style>
+<style lang="less" scoped></style>

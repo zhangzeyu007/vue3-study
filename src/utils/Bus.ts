@@ -3,8 +3,8 @@
  * @Author: 张泽雨
  * @Date: 2022-04-30 16:28:21
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-30 17:11:07
- * @FilePath: \vue3-study\src\Bus.ts
+ * @LastEditTime: 2022-05-21 14:08:38
+ * @FilePath: \vue3-study\src\utils\Bus.ts
  */
 
 type BusClass = {
@@ -35,7 +35,6 @@ class Bus implements BusClass {
 		fn.push(callback)
 		this.list[name] = fn
 	}
-
 }
 
 
