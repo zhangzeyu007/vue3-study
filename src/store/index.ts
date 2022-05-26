@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-02 15:56:59
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-03 11:17:08
+ * @LastEditTime: 2022-05-21 17:57:00
  * @FilePath: \vue3-study\src\store\index.ts
  */
 
@@ -50,7 +50,7 @@ export const useTestSotre = defineStore(Names.TEST, {
 		async setUser() {
 			const result = await Login()
 			this.user = result
-			this.setName('打飞机')
+			this.setName('飞机')
 		},
 		setName(name: string) {
 			this.name = name
