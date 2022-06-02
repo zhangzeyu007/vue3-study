@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 14:37:52
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-03 13:25:57
+ * @LastEditTime: 2022-06-02 09:09:37
  * @FilePath: \vue3-study\src\view\about\directive.vue
 -->
 
@@ -27,6 +27,7 @@ type Dir = {
 
 let flag = ref<boolean>(true);
 let value = ref<string>('');
+
 const vColor: Directive = {
     created() {
         console.log('Directive--------created');

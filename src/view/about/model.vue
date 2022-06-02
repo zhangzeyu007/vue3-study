@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 13:58:27
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 14:32:58
+ * @LastEditTime: 2022-05-30 13:14:30
  * @FilePath: \vue3-study\src\view\about\model.vue
 -->
 <template>

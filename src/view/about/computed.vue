@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-27 15:05:42
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-15 21:10:15
+ * @LastEditTime: 2022-06-02 09:28:43
  * @FilePath: \vue3-study\src\view\about\computed.vue
 -->
 <template>
@@ -71,6 +71,7 @@ const columns = [
         dataIndex: 'operation',
     },
 ];
+
 const handle = (item: Shop, type: boolean): void => {
     if (item.num > 1 && !type) {
         item.num--;
