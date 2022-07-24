@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 17:21:23
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-02 11:43:15
+ * @LastEditTime: 2022-06-12 18:31:31
  * @FilePath: \vue3-study\src\utils\hooks.ts
  */
 
@@ -17,7 +17,6 @@ export default function (options: Options): Promise<{ baseUrl: string }> {
 	return new Promise((resolve) => {
 		onMounted(() => {
 			let img: HTMLImageElement = document.querySelector(options.el) as HTMLImageElement
-			console.log(img);
 			img.onload = () => {
 				resolve({ baseUrl: base64(img) })
 			}

@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-04-27 15:05:42
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-06-02 09:28:43
+ * @LastEditTime: 2022-06-14 15:16:08
  * @FilePath: \vue3-study\src\view\about\computed.vue
 -->
 <template>
@@ -86,4 +86,5 @@ $total = computed(() => {
         return pre + cur.num * cur.price;
     }, 0);
 });
+
 </script>

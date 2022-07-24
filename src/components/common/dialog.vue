@@ -3,8 +3,8 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 14:00:45
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 14:37:07
- * @FilePath: \vue3-study\src\components\common\Dialog.vue
+ * @LastEditTime: 2022-06-10 15:16:18
+ * @FilePath: \vue3-study\src\components\common\dialog.vue
 -->
 
 <template>
@@ -32,6 +32,7 @@ type Props = {
 };
 
 const PropsData = defineProps<Props>();
+
 // 派发
 const emit = defineEmits(['update:modelValue', 'update:title']);
 

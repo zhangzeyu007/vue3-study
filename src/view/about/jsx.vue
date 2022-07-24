@@ -3,7 +3,7 @@
  * @Author: 张泽雨
  * @Date: 2022-05-01 12:15:38
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-05-01 13:13:47
+ * @LastEditTime: 2022-06-12 22:20:50
  * @FilePath: \vue3-study\src\view\about\jsx.vue
 -->
 
@@ -16,6 +16,7 @@
 </template>
 
 <script setup lang="ts">
+
 import renderDom from './app';
 
 const flag = ref(true);

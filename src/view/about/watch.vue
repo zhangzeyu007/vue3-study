@@ -3,11 +3,9 @@
  * @Author: 张泽雨
  * @Date: 2022-04-27 16:16:16
  * @LastEditors: 张泽雨
- * @LastEditTime: 2022-04-27 17:12:06
+ * @LastEditTime: 2022-07-24 13:13:35
  * @FilePath: \vue3-study\src\view\about\watch.vue
 -->
-
-
 <template>
 <input type="text" v-model="message">
 <input type="text" v-model="message2">
